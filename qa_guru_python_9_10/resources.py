@@ -1,9 +1,7 @@
-from qa_guru_python_9_10.pages.registration_page import RegistrationPage
+import os
 
+from selene import browser, have, be, by, command
 
-def test_registration():
-    registration_page = RegistrationPage()
-    registration_page.open_registration_page()
 
 def test_complete_todo():
     browser.open('automation-practice-form')
