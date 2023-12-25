@@ -37,9 +37,9 @@ class RegistrationPage:
 
     def fill_picture(self, value):
         browser.element('#uploadPicture').send_keys(os.path.abspath(
-            'qa_guru_python_9_10/pictures/run_girl.png'))
+            'pictures/run_girl.png'))
 
-    def fill_current_adreess(self, value):
+    def fill_current_adress(self, value):
         browser.element('#currentAddress').should(be.blank).type(value)
 
     def fill_state(self, value):
@@ -51,7 +51,7 @@ class RegistrationPage:
     def press_submit(self):
         browser.element('#submit').press_enter()
 
-    def should_registered_user_with(
+    def should_have_registration_table(
         self,
         text,
         full_name,

@@ -15,11 +15,13 @@ def test_registration():
     registration_page.fill_subject('English')
     registration_page.fill_hobby_checkbox()
     registration_page.fill_picture('run_girl.png')
-    registration_page.fill_current_address('Sant-Peterburg, Aleksandra Matrosova')
+    registration_page.fill_current_adress('Sant-Peterburg, Aleksandra Matrosova')
     registration_page.fill_state('Rajasthan')
     registration_page.fill_city('Jaiselmer')
     registration_page.press_submit()
 
+    # C:\Users\Mary\PycharmProjects\qa_guru_python_9_10\tests\qa_guru_python_9_10\pictures\run_girl.png
+    # C:\Users\Mary\PycharmProjects\qa_guru_python_9_10\qa_guru_python_9_10\pictures\run_girl.png
     #THEN
     registration_page.should_have_registration_table(
         'Thanks for submitting the form',
