@@ -34,10 +34,6 @@ class RegistrationPage:
     def fill_hobby_checkbox(self):
         browser.element('[for=hobbies-checkbox-3]').perform(command.js.scroll_into_view).click()
 
-    # def fill_picture(self, value):
-    #     browser.element('#uploadPicture').send_keys(os.path.abspath(
-    #         'pictures/run_girl.png'))
-
     def fill_picture(self, value):
         browser.element('#uploadPicture').send_keys(resource.path(value))
 
