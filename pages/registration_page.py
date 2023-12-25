@@ -1,6 +1,5 @@
-import os
-
 from selene import browser, have, be, command
+from pictures import resource
 
 
 class RegistrationPage:
@@ -35,9 +34,12 @@ class RegistrationPage:
     def fill_hobby_checkbox(self):
         browser.element('[for=hobbies-checkbox-3]').perform(command.js.scroll_into_view).click()
 
+    # def fill_picture(self, value):
+    #     browser.element('#uploadPicture').send_keys(os.path.abspath(
+    #         'pictures/run_girl.png'))
+
     def fill_picture(self, value):
-        browser.element('#uploadPicture').send_keys(os.path.abspath(
-            'pictures/run_girl.png'))
+        browser.element('#uploadPicture').send_keys(resource.path(value))
 
     def fill_current_adress(self, value):
         browser.element('#currentAddress').should(be.blank).type(value)
