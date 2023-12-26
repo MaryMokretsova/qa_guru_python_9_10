@@ -3,11 +3,12 @@ import dataclasses
 
 @dataclasses.dataclass
 class User:
+    text: str
     first_name: str
     last_name: str
     email: str
     gender: str
-    user_mobile_number: str
+    phone_number: str
     month: str
     year: str
     day: str
@@ -19,18 +20,19 @@ class User:
     city: str
 
 test_user = User(
+    text='Student Registration Form',
     first_name='Mariya',
     last_name='Mokretsova',
-    user_email='cameron105@mail.ru',
-    user_gender='Famele',
-    user_phone_number='9066507373',
+    email='cameron105@mail.ru',
+    gender='Famele',
+    phone_number='9066507373',
     month='June',
     year='1989',
     day='11',
-    user_subject='English',
-    user_hobby='Music',
-    user_picture='run_girl.png',
-    user_current_address='Sant-Peterburg, Aleksandra Matrosova',
-    user_state='Rajasthan',
-    user_city='Jaiselmer',
+    subject='English',
+    hobby='Music',
+    picture='run_girl.png',
+    current_address='Sant-Peterburg, Aleksandra Matrosova',
+    state='Rajasthan',
+    city='Jaiselmer',
 )
