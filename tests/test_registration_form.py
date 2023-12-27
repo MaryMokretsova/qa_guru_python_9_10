@@ -1,6 +1,6 @@
 import os
 
-from selene import browser, have, be, by, command
+from selene import browser, have, be, command
 
 
 def test_complete_todo():

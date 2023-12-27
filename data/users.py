@@ -19,6 +19,7 @@ class User:
     state: str
     city: str
 
+
 test_user = User(
     text='Student Registration Form',
     first_name='Mariya',
