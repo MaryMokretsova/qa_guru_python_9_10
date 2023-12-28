@@ -1,6 +1,7 @@
 from selene import browser, have, be, command
 from pictures import resource
 
+
 class RegistrationPage:
     def open_registration_page(self):
         browser.open('automation-practice-form')
@@ -36,7 +37,7 @@ class RegistrationPage:
                 user.hobby,
                 user.picture,
                 user.current_address,
-                f'{user.user_state} {user.user_city}',
+                f'{user.state} {user.city}',
             )
         )
 
