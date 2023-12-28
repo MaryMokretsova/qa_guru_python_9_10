@@ -3,7 +3,6 @@ import dataclasses
 
 @dataclasses.dataclass
 class User:
-    text: str
     first_name: str
     last_name: str
     email: str
@@ -21,7 +20,6 @@ class User:
 
 
 test_user = User(
-    text='Student Registration Form',
     first_name='Mariya',
     last_name='Mokretsova',
     email='cameron105@mail.ru',

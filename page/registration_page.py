@@ -1,7 +1,5 @@
 from selene import browser, have, be, command
-from data.users import User
 from pictures import resource
-
 
 class RegistrationPage:
     def open_registration_page(self):
@@ -26,17 +24,21 @@ class RegistrationPage:
         browser.element('#react-select-4-input').type(user.city).press_enter()
         browser.element('#submit').press_enter()
 
+    def should_registered_user_with(self, user):
+        browser.element('.table').all('td').even.should(
+            have.exact_texts(
+                f'{user.first_name} {user.last_name}',
+                user.email,
+                user.gender,
+                user.phone_number,
+                f'{user.day} {user.month},{user.year}',
+                user.subject,
+                user.hobby,
+                user.picture,
+                user.current_address,
+                f'{user.user_state} {user.user_city}',
+            )
+        )
 
-    def should_registered_user_with(self, test_user: User):
-        browser.element('.modal-header').should(have.text(test_user.text))
-        browser.all('.table').all('td')[1].should(have.exact_text(f'{test_user.first_name} {test_user.last_name}'))
-        browser.all('.table').all('td')[3].should(have.exact_text(test_user.email))
-        browser.all('.table').all('td')[5].should(have.exact_text(test_user.gender))
-        browser.all('.table').all('td')[7].should(have.exact_text(test_user.phone_number))
-        browser.all('.table').all('td')[9].should(have.exact_text(f'{test_user.day} {test_user.month},{test_user.year}'))
-        browser.all('.table').all('td')[11].should(have.exact_text(test_user.subject))
-        browser.all('.table').all('td')[13].should(have.exact_text(test_user.hobby))
-        browser.all('.table').all('td')[15].should(have.exact_text(test_user.picture))
-        browser.all('.table').all('td')[17].should(have.exact_text(test_user.current_address))
-        browser.all('.table').all('td')[19].should(have.exact_text(f'{test_user.user_state} {test_user.user_city}'))
-
+    def close_the_form(self):
+        browser.element('#closeLargeModal').press_enter()
